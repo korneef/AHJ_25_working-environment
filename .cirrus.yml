@@ -9,7 +9,6 @@ test_task:
     populate_script: npm ci
   test_script: npm run lint && npm test
 
-
 deploy_task:
   only_if: $CIRRUS_BRANCH == 'master'
   depends_on: Tests
@@ -18,9 +17,9 @@ deploy_task:
     ingerprint_script: cat package-lock.json
     populate_script: npm ci
   env:
-    GITHUB_TOKEN: ENCRYPTED[95468f36d823780edd5f0d64b335bf2c6bd0366d9a4c464a427595ce669c00a5b2c41ca004db36342ad0101da00a1103]
+    GITHUB_TOKEN: ENCRYPTED[18ced7b4cc3f59281e0b655c695ebcab27145518c826f315061146770e8b7a12010eacae9bb2a64fb2cb943c8bc1d98d]
     USER: korneef
-    REPO: test-ci-cd
+    REPO: AHJ_25_working-environment
   deploy_script: 
     - git config --global user.name "Cirrus-CI"
     - git config --global user.email "ci@cirruslabs.org"
