@@ -24,6 +24,5 @@ deploy_task:
   deploy_script: 
     - git config --global user.name "Cirrus-CI"
     - git config --global user.email "ci@cirruslabs.org"
-#    - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
     - git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$USER/$REPO
     - npm run build && npx push-dir --dir=dist --branch=gh-pages --force --verbose
